@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pylab as plt
 import pandas as pd 
+from ejercicio2 import *
 
 def cleanData(data):
 	means = []
@@ -28,7 +29,7 @@ def plot(data, data_type):
 	plt.xlabel("Segundos que se tarda en hacer los 100 mts.")
 	plt.ylabel("Cantidad de atletas que lo logran en ese tiempo.")
 	plt.title("Distribucion de los tiempos de corrida, por estado del dia. Datos " + data_type)
-	plt.show()
+	#plt.show()
 
 	plt.subplot(1,3,1)
 	plt.plot(d1, "r-" , marker='o')
@@ -45,7 +46,7 @@ def plot(data, data_type):
 	plt.title("Tiempo Lluvioso. Datos " + data_type)
 	plt.xlabel("Numero atleta")
 	plt.ylabel("Tiempo en segundos para los 100 mts")
-	plt.show()
+	#plt.show()
 
 	plt.plot(d1, label="Tiempo soleado")
 	plt.plot(d2, label="Tiempo nublado")
@@ -54,12 +55,18 @@ def plot(data, data_type):
 	plt.ylabel("Tiempo en segundos para los 100 mts")
 	plt.title("Estados del tiempo, superpuestos.Datos " + data_type)
 	plt.legend(loc='upper right')
-	plt.show()
+	#plt.show()
 
 
 data = np.loadtxt('tiempos.txt')
 plot(data , "sucios")
 data = cleanData(data)
 plot(data, "limpios")
+
+
+
+ejercicio2(data)
+
+
 
 
