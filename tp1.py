@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pylab as plt
 import pandas as pd 
+import seaborn as sns
 from ejercicio2 import *
 
 def cleanData(data):
@@ -56,6 +57,13 @@ def plot(data, data_type):
 	plt.title("Estados del tiempo, superpuestos.Datos " + data_type)
 	plt.legend(loc='upper right')
 	#plt.show()
+
+	
+	data_frame = pd.DataFrame(data)
+	data_frame.columns = ["soleado" , "nublado" , "lluvioso"]
+
+	sns_plot = sns.pairplot(data_frame)
+	plt.show()
 
 
 data = np.loadtxt('tiempos.txt')
