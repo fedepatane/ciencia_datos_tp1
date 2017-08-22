@@ -3,6 +3,8 @@ import matplotlib.pylab as plt
 import pandas as pd 
 import seaborn as sns
 from ejercicio2 import *
+from ejercicio3 import * 
+import scipy.stats as ss
 
 def cleanData(data):
 	means = []
@@ -63,7 +65,8 @@ def plot(data, data_type):
 	data_frame.columns = ["soleado" , "nublado" , "lluvioso"]
 
 	sns_plot = sns.pairplot(data_frame)
-	plt.show()
+	#plt.show()
+
 
 
 data = np.loadtxt('tiempos.txt')
@@ -73,8 +76,8 @@ plot(data, "limpios")
 
 
 
-ejercicio2(data)
-
+#ejercicio2(data)
+ejercicio3(data)
 
 
 
